@@ -1,0 +1,121 @@
+================================================================================
+NETWORK SECURITY MONITORING REPORT
+================================================================================
+
+Report generated: 2025-04-07 14:23:15
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+- Scanned host: 192.168.100.10
+- Open ports found: 3
+- Packets analyzed: 2697
+- Security alerts: 2
+
+PORT SCAN RESULTS
+--------------------------------------------------------------------------------
+Target: 192.168.100.10 (192.168.100.10)
+Scan Duration: 0.02 seconds
+Scan Time: 2025-04-07 14:20:12
+
+Open Ports:
+  Port  Service    State
+------  ---------  -------
+    22  ssh        open
+    80  http       open
+    21  ftp        open
+
+TRAFFIC ANALYSIS
+--------------------------------------------------------------------------------
+Interface: ens37
+Duration: 180.04 seconds
+Total Packets: 2697
+Packets per Second: 14.98
+Total Conversations: 13
+
+Packet Type Distribution:
+  - ARP: 18 (0.7%)
+  - UDP: 26 (1.0%)
+  - DNS: 15 (0.6%)
+  - TCP: 2643 (98.0%)
+  - SMTP: 3 (0.1%)
+  - SSH: 63 (2.3%)
+  - HTTP/HTTPS: 179 (6.6%)
+  - ICMP: 6 (0.2%)
+
+Top Source IP Addresses:
+  - 192.168.100.131: 1348 (50.0%)
+  - 192.168.100.10: 1299 (48.2%)
+  - 192.168.100.130: 7 (0.3%)
+  - 192.168.100.1: 6 (0.2%)
+  - 182.16.156.5: 5 (0.2%)
+  - 91.189.91.49: 5 (0.2%)
+  - 192.168.100.2: 4 (0.1%)
+  - 192.168.100.129: 1 (0.0%)
+
+Top Destination IP Addresses:
+  - 192.168.100.10: 1341 (49.7%)
+  - 192.168.100.131: 1306 (48.4%)
+  - 224.0.0.251: 6 (0.2%)
+  - 192.168.100.130: 6 (0.2%)
+  - 91.189.91.49: 6 (0.2%)
+  - 182.16.156.5: 5 (0.2%)
+  - 192.168.100.2: 4 (0.1%)
+  - 192.168.100.129: 1 (0.0%)
+
+Top Destination Ports:
+  - 33004 (unknown): 1000 (37.1%)
+  - 80 (http): 178 (6.6%)
+  - 21 (ftp): 98 (3.6%)
+  - 22 (ssh): 63 (2.3%)
+  - 51860 (unknown): 21 (0.8%)
+  - 51844 (unknown): 10 (0.4%)
+  - 55736 (unknown): 8 (0.3%)
+  - 55752 (unknown): 8 (0.3%)
+  - 55778 (unknown): 8 (0.3%)
+  - 55806 (unknown): 8 (0.3%)
+
+SECURITY ALERTS
+--------------------------------------------------------------------------------
+Total Alerts: 2
+
+Alert Severity Distribution:
+  - Medium: 2
+
+Alert Details:
+
+Alert #1:
+  - Time: 2025-04-07 14:23:12
+  - Signature ID: SIG-001
+  - Signature Name: Port Scan Detection
+  - Severity: MEDIUM
+  - Source IP: 192.168.100.131
+  - Destination IP: 192.168.100.10
+  - Details: Multiple port connection attempts (10 ports in 5 seconds)
+
+Alert #2:
+  - Time: 2025-04-07 14:23:12
+  - Signature ID: SIG-001
+  - Signature Name: Port Scan Detection
+  - Severity: MEDIUM
+  - Source IP: 192.168.100.10
+  - Destination IP: 192.168.100.131
+  - Details: Multiple port connection attempts (10 ports in 5 seconds)
+
+VISUALIZATIONS
+--------------------------------------------------------------------------------
+The following visualization files were generated:
+
+- packet_types_20250407_142312.png
+- top_ips_20250407_142313.png
+- port_distribution_20250407_142313.png
+- protocol_distribution_20250407_142314.png
+- security_alerts_20250407_142314.png
+
+RECOMMENDATIONS
+--------------------------------------------------------------------------------
+1. Consider securing or disabling FTP service (port 21) as it is commonly targeted by attackers.
+2. Review firewall rules to limit port scanning exposure.
+
+================================================================================
+END OF REPORT
+================================================================================
