@@ -1,0 +1,42 @@
+{
+  "signatures": [
+    {
+      "id": "SIG-001",
+      "name": "Port Scan Detection",
+      "description": "Detects rapid connection attempts to multiple ports",
+      "detection": {
+        "type": "frequency",
+        "threshold": 10,
+        "timeframe": 5,
+        "ports": "multiple"
+      },
+      "severity": "medium"
+    },
+    {
+      "id": "SIG-002",
+      "name": "SSH Brute Force Attempt",
+      "description": "Detects multiple failed SSH login attempts",
+      "detection": {
+        "type": "pattern",
+        "port": 22,
+        "protocol": "tcp",
+        "pattern": "Failed password",
+        "threshold": 5
+      },
+      "severity": "high"
+    },
+    {
+      "id": "SIG-003",
+      "name": "DNS Tunneling",
+      "description": "Detects potential DNS tunneling activity",
+      "detection": {
+        "type": "anomaly",
+        "port": 53,
+        "protocol": "udp",
+        "condition": "unusual_length",
+        "threshold": 100
+      },
+      "severity": "high"
+    }
+  ]
+}
